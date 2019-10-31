@@ -7,6 +7,13 @@ username: manager
 password: overlook2019
 If it is a customer logging in, they should log in with the following credentials:
 
+class Manger {
+  constructor(userName)
+  this.user = userName;
+
+}
+or if manager then
+
 username: customer50 (where 50 is the ID of the user)
 password: overlook2019
 
@@ -31,7 +38,7 @@ I should see a dashboard page that shows me:
 _Any room bookings I have made (past or present/upcoming)_
 _The total amount I have spent on rooms_
 
- customer view
+# customer view
  - anyBookingsPast/Present
  - totalSpentOnRooms
 
@@ -62,6 +69,45 @@ Room Booking: https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookin
     "roomNumber": 4
 }
 
+##############################
+fetch request to: (make DRY like last project)
+https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users
+https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms
+https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings
+
+Allow customers and managers to add a room service charge to a booking by utilizing the:
+https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices
+
+user data:
+{
+    "id":1,
+    "name":"Leatha Ullrich"
+}
+
+rooms data:
+{
+    "number":1,
+    "roomType":"residential suite",
+    "bidet":true,
+    "bedSize":"queen",
+    "numBeds":1,
+    "costPerNight":358.4
+}
+
+bookings data:
+{
+    "id":1572293130156,
+    "userID":19,
+    "date":"2019/11/06",
+    "roomNumber":18,
+    "roomServiceCharges":[]
+}
+
+###################################
+
+
+
+
 4. Manager Interaction
 As a manager:
 
@@ -79,3 +125,34 @@ Deleting an upcoming booking will require a DELETE request to the bookings endpo
 {
     id: 12085397154
 }
+
+
+
+#######################
+If somebody wants to use separated html for every board (customer / manager ) you need to add all html into webpack.config file
+
+// Below is needed for webpack-dev-server
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './src/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'user-deck.html',
+      template: './src/user-deck.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'manager-deck.html',
+      template: './src/manager-deck.html'
+    })
+  ],
+
+  $('.login-form button').on('click', function() {
+  if ($user === 'manager') {
+    window.location = "./manager-deck.html";
+  } else {
+    window.location = "./user-deck.html";
+  }
+});
+
+######################
