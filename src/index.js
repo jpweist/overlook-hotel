@@ -9,5 +9,37 @@ import './css/base.scss';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
+$( document ).ready(function() {
 
-console.log('This is the JavaScript entry file - your code begins here.');
+$('.login-button').on( "click", function() {
+
+  let userName = $('.user-login').val();
+  let userpassword = $('.password').val();
+
+  if (userName === 'manager' && userpassword === 'overlook2019') {
+    console.log(userName, userpassword)
+  }
+  if (userName === 'customer' && userpassword === 'overlook2019') {
+    console.log(userName, userpassword)
+  }
+  else {
+    console.log('failed login')
+  }
+})
+
+
+// var location = '';
+// if (iName=='love' && AccId=='cat') {
+//     location=("page1.html");
+// }
+// else if (iName=='mom' && AccId=='love') {
+//     location=("page2.html");
+// }
+// else alert('Wrong pair');
+//
+// this.location.href = location;
+
+
+
+
+}); // end jQuery
