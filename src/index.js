@@ -17,7 +17,7 @@ $('.login-button').on( "click", function() {
   let userpassword = $('.password').val();
 
   if (userName === 'manager' && userpassword === 'overlook2019') {
-    window.location = '/src/manager.html';
+    window.location = '.src/manager.html';
 
     // window.locagtion.assign("manager.html");
     // window.location.href = 'http://www.google.com';
