@@ -5,24 +5,24 @@ import Customer from '../src/Customer';
 import Bookings from '../src/Bookings';
 import bookingsData from '../src/sample-data/bookings.js';
 
-describe('See if the tests are running', function() {
+describe('Customer See if the tests are running', function() {
   it('should return true', function() {
     expect(true).to.equal(true);
   });
-  let customer1, bookingsData1;
+  let customer1;
 
   beforeEach(() => {
     customer1 = new Customer({
         "id":1,
         "name":"Leatha Ullrich"
     });
-    bookingsData1 = new Bookings(
-    {"id":1572293130160,
-    "userID":1,
-    "date":"2019/11/18",
-    "roomNumber":5,
-    "roomServiceCharges":[]});
-  });
+  //   bookingsData1 = new Bookings(
+  //   {"id":1572293130160,
+  //   "userID":1,
+  //   "date":"2019/11/18",
+  //   "roomNumber":5,
+  //   "roomServiceCharges":[]});
+  // });
   it('should be an instance of customer', function() {
     expect(customer1).to.be.an.instanceof(Customer);
   });
@@ -35,7 +35,7 @@ describe('See if the tests are running', function() {
   })
   it('should be able to see seeAvailableRoomsDate', function() {
     console.log(customer1.seeAvailableRoomsDate())
-    expect(customer1.seeAvailableRoomsDate().to.equal("2019/11/18"))
+    expect(customer1.seeAvailableRoomsDate().to.deep.equal("2019/11/18"))
   });
 
 
