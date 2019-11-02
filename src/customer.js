@@ -1,16 +1,18 @@
 class Customer {
-  constructor(id, name) {
-    this.id = id;
-    this.name = name;
+  constructor(object) {
+    this.id = object.id;
+    this.name = object.name;
+  }
+  seeAvailableRoomsDate(date) {
+    //see all the available rooms by date
+    let findDate = bookingsData1.date.find((day) => day === date)
+    return findDate;
   }
   allBookings() {
     //return all the past present and upcoming bookings
   }
   totalSpent() {
     //total ammount the the customer has spent
-  }
-  seeAvailableRoomsDate() {
-    //see all the available rooms by date
   }
   bookRoom() {
     //book selected room
@@ -38,10 +40,20 @@ export default Customer;
 // }
 //
 // bookings data:
-// {
-//     "id":1572293130156,
-//     "userID":19,
-//     "date":"2019/11/06",
-//     "roomNumber":18,
-//     "roomServiceCharges":[]
-// }
+// {"id":1572293130160,
+// "userID":1,
+// "date":"2019/11/18",
+// "roomNumber":5,
+// "roomServiceCharges":[]}
+
+// {"id":1572293130170,
+// "userID":1,
+// "date":"2019/12/05",
+// "roomNumber":5,
+// "roomServiceCharges":[]}
+
+// {"id":1572293130178,
+// "userID":1,
+// "date":"2019/12/11",
+// "roomNumber":19,
+// "roomServiceCharges":[]}
