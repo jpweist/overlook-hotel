@@ -17,27 +17,29 @@ $('.login-button').on( "click", function() {
   let userpassword = $('.password').val();
 
   if (userName === 'manager' && userpassword === 'overlook2019') {
+    window.location = '/src/manager.html';
+
+    // window.locagtion.assign("manager.html");
+    // window.location.href = 'http://www.google.com';
+    // $("#div1").load("demo_test.txt");
+
+    // filename: 'manager.html',
+    // template: './src/manager.html'
+
+// window.location.assign()
+
     console.log(userName, userpassword)
   }
-  if (userName === 'customer' && userpassword === 'overlook2019') {
+   if (userName === 'customer' && userpassword === 'overlook2019') {
     console.log(userName, userpassword)
   }
-  else {
+  if (userName !== 'manager' && userpassword !== 'overlook2019' || userName !== 'customer' && userpassword !== 'overlook2019') {
     console.log('failed login')
   }
 })
 
 
-// var location = '';
-// if (iName=='love' && AccId=='cat') {
-//     location=("page1.html");
-// }
-// else if (iName=='mom' && AccId=='love') {
-//     location=("page2.html");
-// }
-// else alert('Wrong pair');
-//
-// this.location.href = location;
+
 
 
 
