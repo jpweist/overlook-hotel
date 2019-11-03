@@ -4,11 +4,13 @@
 // An example of how you import jQuery into a JS file if you use jQuery in that file
 import $ from 'jquery';
 
+// import Manger from 'Manger'
 // An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png'
+import './images/turing-logo.png';
+
 $( document ).ready(function() {
 
 $('.login-button').on( "click", function() {
@@ -31,7 +33,7 @@ $('.login-button').on( "click", function() {
     console.log(userName, userpassword)
   }
    if (userName === 'customer' && userpassword === 'overlook2019') {
-    console.log(userName, userpassword)
+    window.location = 'customer.html'
   }
   if (userName !== 'manager' && userpassword !== 'overlook2019' || userName !== 'customer' && userpassword !== 'overlook2019') {
     console.log('failed login')

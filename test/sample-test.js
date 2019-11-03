@@ -2,6 +2,7 @@ import chai from 'chai';
 const expect = chai.expect;
 
 import Customer from '../src/Customer';
+import Manager from '../src/Manager';
 import Bookings from '../src/Bookings';
 import bookingsData from '../src/sample-data/bookings.js';
 
@@ -10,19 +11,26 @@ describe('Customer See if the tests are running', function() {
     expect(true).to.equal(true);
   });
   let customer1;
+  let manager;
 
   beforeEach(() => {
     customer1 = new Customer({
         "id":1,
         "name":"Leatha Ullrich"
     });
-  //   bookingsData1 = new Bookings(
-  //   {"id":1572293130160,
-  //   "userID":1,
-  //   "date":"2019/11/18",
-  //   "roomNumber":5,
-  //   "roomServiceCharges":[]});
-  // });
+    manager1 = new Manger({
+      "user": 'manager'
+    });
+    bookingsData1 = new Bookings({
+    "id":1572293130160,
+    "userID":1,
+    "date":"2019/11/18",
+    "roomNumber":5,
+    "roomServiceCharges":[]
+    });
+
+  });
+// Customer tests
   it('should be an instance of customer', function() {
     expect(customer1).to.be.an.instanceof(Customer);
   });
@@ -30,13 +38,20 @@ describe('Customer See if the tests are running', function() {
     expect(customer1.name).to.equal("Leatha Ullrich");
     expect(customer1.id).to.equal(1);
   });
-  it('should be an instance of booking', function() {
-    expect(bookingsData1).to.be.an.instanceof(Bookings);
-  })
+
   it('should be able to see seeAvailableRoomsDate', function() {
     console.log(customer1.seeAvailableRoomsDate())
     expect(customer1.seeAvailableRoomsDate().to.deep.equal("2019/11/18"))
   });
 
+});
 
+
+// Manager tests
+describe('Manager check userName for manager', function() {
+  it('should be an instace of Manger', function() {
+    console.log(manager1)
+
+    expect(manager1).to.equal('manager');
+  });
 });
