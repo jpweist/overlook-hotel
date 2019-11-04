@@ -4,7 +4,7 @@ const expect = chai.expect;
 import Manager from '../src/Manager';
 
 
-describe('Manger See if the test are running', function() {
+describe('Manager Class tests', function() {
   let manager1 = {};
 
   beforeEach(() => {

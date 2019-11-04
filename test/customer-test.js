@@ -3,7 +3,7 @@ const expect = chai.expect;
 
 import Customer from '../src/Customer';
 
-describe('Customer See if the tests are running', function() {
+describe('Customer Class tests', function() {
   it('should return true', function() {
     expect(true).to.equal(true);
   });

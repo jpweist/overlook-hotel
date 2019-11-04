@@ -22,8 +22,8 @@ $('.login-button').on( "click", function() { // login manager or customer
 
   if (userName === 'manager' && userpassword === 'overlook2019') {
     let manager1 = new Manager(userName);
-    let bookings1 = new Bookings(bookingsData);
-    console.log(bookings1, manager1)
+    // let bookings1 = new Bookings(bookingsData);
+    console.log(manager1)
     window.location = 'manager.html';
   }
    if (userName === 'customer' && userpassword === 'overlook2019') {
@@ -36,25 +36,25 @@ $('.login-button').on( "click", function() { // login manager or customer
   }
 })
 
-var ctx = $('#myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});
+// var ctx = $('#myChart').getContext('2d');
+// var chart = new Chart(ctx, {
+//     // The type of chart we want to create
+//     type: 'line',
+//
+//     // The data for our dataset
+//     data: {
+//         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+//         datasets: [{
+//             label: 'My First dataset',
+//             backgroundColor: 'rgb(255, 99, 132)',
+//             borderColor: 'rgb(255, 99, 132)',
+//             data: [0, 10, 5, 2, 20, 30, 45]
+//         }]
+//     },
+//
+//     // Configuration options go here
+//     options: {}
+// });
 
 
 
