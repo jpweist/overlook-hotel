@@ -4,14 +4,14 @@ const expect = chai.expect;
 import Customer from '../src/Customer';
 import Manager from '../src/Manager';
 import Bookings from '../src/Bookings';
-import bookingsData from '../src/sample-data/bookings.js';
 
 describe('Customer See if the tests are running', function() {
   it('should return true', function() {
     expect(true).to.equal(true);
   });
-  let customer1;
-  let manager;
+  let customer1 = {};
+  let manager = {};
+  let bookings1 = {};
 
   beforeEach(() => {
     customer1 = new Customer({
@@ -21,7 +21,7 @@ describe('Customer See if the tests are running', function() {
     manager1 = new Manger({
       "user": 'manager'
     });
-    bookingsData1 = new Bookings({
+    bookings1 = new Bookings({
     "id":1572293130160,
     "userID":1,
     "date":"2019/11/18",
@@ -46,10 +46,9 @@ describe('Customer See if the tests are running', function() {
 
 });
 
-
 // Manager tests
 describe('Manager check userName for manager', function() {
-  it('should be an instace of Manger', function() {
+  it('should be an instace of Maanger', function() {
     console.log(manager1)
 
     expect(manager1).to.equal('manager');

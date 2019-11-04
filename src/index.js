@@ -9,6 +9,8 @@ import $ from 'jquery';
 import './css/base.scss';
 import Manager from '../src/Manager';
 import Customer from '../src/Customer';
+import Bookings from '../src/Bookings';
+
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png';
 $( document ).ready(function() {
@@ -20,6 +22,8 @@ $('.login-button').on( "click", function() { // login manager or customer
 
   if (userName === 'manager' && userpassword === 'overlook2019') {
     let manager1 = new Manager(userName);
+    let bookings1 = new Bookings(bookingsData);
+    console.log(bookings1, manager1)
     window.location = 'manager.html';
   }
    if (userName === 'customer' && userpassword === 'overlook2019') {
