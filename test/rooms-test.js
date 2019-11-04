@@ -19,4 +19,8 @@ describe('Rooms Class tests', function() {
   it('should be an instanceof Rooms', function() {
     expect(rooms1).to.be.an.instanceof(Rooms);
   });
+  it('should be have a roomType of residential suite', function() {
+    expect(rooms1.roomType).to.equal("residential suite");
+
+  })
 });
