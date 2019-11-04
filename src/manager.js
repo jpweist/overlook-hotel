@@ -1,5 +1,5 @@
 class Manager {
-  constructor(userName = manager) {
+  constructor(userName) {
     this.user = userName; // manager
   }
 

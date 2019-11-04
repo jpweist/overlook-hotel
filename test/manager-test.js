@@ -1,16 +1,24 @@
-// import chai from 'chai';
-// const expect = chai.expect;
-//
-// import Manger from '../src/Manager';
-// import bookingsData from '../src/sample-data/bookings.js';
-//
-//
-// describe('Manger See if the test are running', function() {
-//   it('should return true', function() {
-//     // expect(true).to.equal(true);
-//   });
-//
-// });
+import chai from 'chai';
+const expect = chai.expect;
+
+import Manager from '../src/Manager';
+
+
+describe('Manger See if the test are running', function() {
+  let manager1 = {};
+
+  beforeEach(() => {
+    manager1 = new Manager({
+      "user": 'manager'
+    });
+  });
+
+  it('should be an instanceof Manager', function() {
+    expect(manager1).to.be.an.instanceof(Manager);
+
+  });
+
+});
 
 
 
