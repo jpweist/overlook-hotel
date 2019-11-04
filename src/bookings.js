@@ -1,8 +1,16 @@
 class Bookings {
   constructor(array) {
     this.allBookings = array;
-
   }
+  // bookings.allBookings[0].date
+  seeAvailableRoomsDate(date) {
+  let data = bookings.allBookings;
+  data.reduce((acc, num) => {
+    console.log(acc)
+    return acc;
+  },[])
+      // see all the available rooms by date
+    }
 }
 export default Bookings;
 

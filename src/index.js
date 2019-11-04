@@ -19,32 +19,22 @@ let rooms;
 let roomData, bookingsData;
 let getCounter = 0;
 
-function getRoomsData() {
-  fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms')
-  .then(data => data.json())
-  .then(data => rooms = new Rooms(data.rooms))
-  .then(data => console.log(rooms))
-  .catch(err => console.log(err));
-};
-
-getRoomsData();
-
-function getBookingsData() {
-  fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings')
-  .then(data => data.json())
-  .then(data => bookings = new Bookings(data.bookings))
-  .then(data => console.log(bookings))
-  .catch(err => console.log(err));
-}
-getBookingsData();
-
-// function theInitializer() {
-//   getHelper('rooms/rooms', (roomData) => {
-//     rooms = new Rooms(roomData);
-//   });
+// function getRoomsData() {
+//   fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms')
+//   .then(data => data.json())
+//   .then(data => rooms = new Rooms(data.rooms))
+//   .then(data => console.log(rooms.allRooms))
+//   .catch(err => console.log(err));
+// };
+//
+// getRoomsData();
+// function getBookingsData() {
+//   fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/' + ext)
+//   .then(data => data.json())
+//   .then(data => bookings = new Bookings(data.bookings))
+//   .then(data => console.log(bookings.allBookings))
+//   .catch(err => console.log(err));
 // }
-
-// ##############################
 // fetch request to: (make DRY like last project)
 // https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users
 // https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms
@@ -53,53 +43,30 @@ getBookingsData();
 // Allow customers and managers to add a room service charge to a booking by utilizing the:
 // https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices
 
-  //
-  // function theInitializer() {
-  //   getHelper('users/users', (data) => {
-  //     customerData = data.userData;
-  //     customer = new Customer(customerData);
+function getData(ext, callback) {
+  fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/' + ext)
+  .then(data => data.json())
+  .then(data => {
+    callback(data);
+  })
+  .catch(err => console.log(err));
+}
+makeClasses()
 
-  //     rooms = new Rooms(userData);
-  //     getHelper('rooms/rooms', (roomData) => {
-  //       sleepData = sleepData;
-  //       sleep = new Sleep(userData, sleepData.sleepData);
-  //     })
-  //     getHelper('activity/activityData', (actData) => {
-  //       actData = actData;
-  //       activity = new Activity(userData, actData.activityData);
-  //     })
-  //     getHelper('hydration/hydrationData', (hydData) => {
-  //       hydData = hydData;
-  //       hydration = new Hydration(userData, hydData.hydrationData);
-  //     })
-  //   })
-  // }
-  //
-  // theInitializer();
-  //
-  // function getCheck() {
-  //   if (getCounter === 4) {
-  //     initDom();
-  //   }
-  // }
-  //
-  // function initDom() {
-  //   const userIdNum = generateRandomUserId();
-  //   const currentDate = '2019/06/30';
-  //   const user = userRepo.returnUserData(userIdNum);
-  //   const newUser = new User(user);
-  //   const friendNames = returnFriendListNames();
-  //   const friendSteps = returnFriendListSteps();
-  //   const stepsTrend = (activity.returnThreeDayStepStreak(user.id)[0]);
-
-
-
-
-
-
-
-
-
+function makeClasses() {
+  getData('bookings/bookings', (data) => {
+    bookings = new Bookings(data.bookings);
+    console.log(bookings);
+  });
+  getData('rooms/rooms', (data) => {
+    rooms = new Rooms(data.rooms);
+    console.log(rooms)
+  });
+  getData('users/users', (data) => {
+    customer = new Customer(data.users);
+    console.log(customer);
+  })
+}
 
 
 
@@ -114,6 +81,7 @@ $('.login-button').on( "click", function() { // login manager or customer
     let manager1 = new Manager(userName);
     // let bookings1 = new Bookings(bookingsData);
     // getHelper('rooms/rooms', (roomData));
+    bookings.seeAvailableRoomsDate('2019/11/06');
     window.location = 'manager.html';
   }
    if (userName === 'customer' && userpassword === 'overlook2019') {

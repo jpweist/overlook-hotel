@@ -1,7 +1,6 @@
 class Customer {
-  constructor(object) {
-    this.id = object.id;
-    this.name = object.name;
+  constructor(array) {
+    this.allUsers = array;
   }
   seeAvailableRoomsDate(date) {
     //see all the available rooms by date
