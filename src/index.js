@@ -7,32 +7,24 @@ import $ from 'jquery';
 // import Manger from 'Manger'
 // An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
-
+import Manager from '../src/Manager';
+import Customer from '../src/Customer';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png';
-
 $( document ).ready(function() {
 
-$('.login-button').on( "click", function() {
+$('.login-button').on( "click", function() { // login manager or customer
 
   let userName = $('.user-login').val();
   let userpassword = $('.password').val();
 
   if (userName === 'manager' && userpassword === 'overlook2019') {
+    let manager1 = new Manager(userName);
     window.location = 'manager.html';
-
-    // window.locagtion.assign("manager.html");
-    // window.location.href = 'http://www.google.com';
-    // $("#div1").load("demo_test.txt");
-
-    // filename: 'manager.html',
-    // template: './src/manager.html'
-
-// window.location.assign()
-
-    console.log(userName, userpassword)
   }
    if (userName === 'customer' && userpassword === 'overlook2019') {
+     let customer1 = new Customer(userName);
+     console.log(customer1)
     window.location = 'customer.html'
   }
   if (userName !== 'manager' && userpassword !== 'overlook2019' || userName !== 'customer' && userpassword !== 'overlook2019') {
@@ -40,7 +32,25 @@ $('.login-button').on( "click", function() {
   }
 })
 
+var ctx = $('#myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
 
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
 
 
 
