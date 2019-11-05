@@ -15,7 +15,7 @@ npm install
 To verify that it is setup correctly, run `npm start` in your terminal. Go to the url `http://localhost:8080/`. If that's the case, you're good to go. Enter `control + c` in your terminal to stop the server at any time.
 
 ## Iterations
-- 1. Login
+Login
 Your app should support two different types of users: a customer and a manager. When first arriving at the site, a user should be able to log in with a username and password. If it is a manager logging in, they should log in with the following credentials:
 
 username: manager
@@ -33,8 +33,11 @@ Datasets
 You will use the following endpoints for fetching your data:
 
 https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users
+
 https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms
+
 https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings
+
 
 currently fetching data from urls. The data is also stored in sample-data in src.
 
@@ -45,3 +48,9 @@ the Customer class would be set up to extend Hotel class.
 
 # Tests
 The tests are just basic.
+
+![Login Screen](https://github.com/jpweist/overlook-hotel/blob/master/src/images/overlook-login.png")
+
+![Manager Screen](https://github.com/jpweist/overlook-hotel/blob/master/src/images/overlook-manager.png")
+
+![Customer Screen](https://github.com/jpweist/overlook-hotel/blob/master/src/images/overlook-customer.png")
