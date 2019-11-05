@@ -1,6 +1,8 @@
 1. Login
-Your app should support two different types of users: a customer and a manager. When first arriving at the site,
-a user should be able to log in with a username and password. If it is a manager logging in, they should log in
+Your app should support two different types of users: a customer and a manager.
+When first arriving at the site,
+a user should be able to log in with a username and password. If it is a manager
+logging in, they should log in
 with the following credentials:
 
 username: manager
@@ -139,19 +141,19 @@ If somebody wants to use separated html for every board (customer / manager ) yo
     }),
     new HtmlWebpackPlugin({
       filename: 'user-deck.html',
-      template: './src/user-deck.html'
+      template: './src/customer.html'
     }),
     new HtmlWebpackPlugin({
       filename: 'manager-deck.html',
-      template: './src/manager-deck.html'
+      template: './src/manager.html'
     })
   ],
 
-  $('.login-form button').on('click', function() {
+  $('.login-button').on('click', function() {
   if ($user === 'manager') {
-    window.location = "./manager-deck.html";
+    window.location = "./manager.html";
   } else {
-    window.location = "./user-deck.html";
+    window.location = "./user.html";
   }
 });
 

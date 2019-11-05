@@ -1,7 +1,6 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
 $primary-background: black;
 
-
 body {
   background-color: $primary-background;
   // font-family: "Grand Hotel", sans-serif;
@@ -23,4 +22,8 @@ body {
   border: none;
   padding: .2rem;
   margin: .5rem 0;
+}
+
+.error {
+  background-color: green;
 }
