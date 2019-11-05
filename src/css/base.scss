@@ -1,5 +1,6 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
 $primary-background: black;
+$primary-color: #3d8d20;
 
 body {
   background-color: $primary-background;
@@ -9,7 +10,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 30%;
-  color: darkgreen;
+  color: $primary-color;
 }
 .main-login {
   display: flex;
