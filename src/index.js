@@ -59,10 +59,10 @@ $('.login-button').on( "click", function() { // login manager or customer
   let userpassword = $('.password').val();
 
   if (userName === 'manager' && userpassword === 'overlook2019') {
-    let manager1 = new Manager(userName);
+    // let manager1 = new Manager(userName);
     // let bookings1 = new Bookings(bookingsData);
     // getHelper('rooms/rooms', (roomData));
-    bookings.seeAvailableRoomsDate('2019/11/06');
+    // bookings.seeAvailableRoomsDate('2019/11/06');
     window.location = 'manager.html';
   }
    if (userName === 'customer' && userpassword === 'overlook2019') {

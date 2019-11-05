@@ -26,7 +26,8 @@ describe('Hotel Class tests', function() {
   })
 
   it('should be an instance of Hotel', function() {
+    console.log(hotel1);
     expect(hotel1).to.be.an.instanceof(Hotel);
   });
-  
+
 })
