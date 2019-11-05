@@ -1,12 +1,14 @@
-class Manager {
-  constructor(userName) {
-    this.user = userName; // manager
+import Hotel from '../src/hotel.js';
+
+class Manager extends Hotel{
+  constructor(rooms, bookings, userName) {
+    super(rooms, bookings, userName)
+    this.userName = userName;
   }
+
 
 }
 export default Manager;
-
-
 
 
 
