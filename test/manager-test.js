@@ -39,24 +39,3 @@ describe('Manager Class tests', function() {
   })
 
 });
-
-
-
-
-
-
-
-
-
-
-// describe('Customer See if the tests are running', function() {
-//   it('should return true', function() {
-//     expect(true).to.equal(true);
-//   });
-//   let customer1;
-//
-//   beforeEach(() => {
-//     customer1 = new Customer({
-//         "id":1,
-//         "name":"Leatha Ullrich"
-//     });
