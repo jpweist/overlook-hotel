@@ -1,24 +1,30 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
 $primary-background: black;
+$primary-color: #3d8d20;
+$password-background-color: darkgray;
 
 body {
   background-color: $primary-background;
-  // font-family: "Grand Hotel", sans-serif;
   font-family: 'Nanum Gothic', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30%;
-  color: darkgreen;
+  margin-top: 15%;
+  color: $primary-color;
 }
+
+h1 {
+  text-align: center;
+}
+
 .main-login {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .user-login,
 .password {
-  background-color: darkgray;
+  background-color: $password-background-color;
   border: none;
   padding: .2rem;
   margin: .5rem 0;
